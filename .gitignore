@@ -57,3 +57,22 @@ typings/
 # dotenv environment variables file
 .env
 
+# config
+src/config/development/*.js
+
+# Mac OS X
+.DS_Store
+
+# temp
+temp
+tmp
+*.bak
+
+# IDE about
+.idea
+.eslintrc
+
+#logs
+Logs/*
+
+

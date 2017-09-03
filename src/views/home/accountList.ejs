@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%= title %></title>
+</head>
+<body>
+	<h1>account list</h1>
+ 	<table border="1">
+		<tr>
+			<th>id</th>
+			<th>account</th>
+			<th>phone</th>
+			<th>password</th>
+			<th>salt</th>
+			<th>status</th>
+			<th>createdTime</th>
+			<th>updatedTime</th>
+		</tr>
+
+		<% for (var i = 0; i < list.length; i++) { -%>
+		<tr>
+			<td><%=list[i].id%></td>
+			<td><%=list[i].account%></td>
+			<td><%=list[i].phone%></td>
+			<td><%=list[i].password%></td>
+			<td><%=list[i].salt%></td>
+			<td><%=list[i].status%></td>
+			<td><%=list[i].createdTime%></td>
+			<td><%=list[i].updatedTime%></td>
+		</tr>  
+		<% } -%>
+	</table>
+</body>
+</html>

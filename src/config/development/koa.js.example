@@ -1,0 +1,11 @@
+'use strict';
+
+module.exports = {
+
+  port: 3000,
+
+  apiPort: 3001,
+  
+  keys: ['im a newer secret', 'i like koa']
+
+};

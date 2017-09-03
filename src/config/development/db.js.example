@@ -1,0 +1,21 @@
+'use strict';
+
+module.exports = {
+  database: '',
+  user: '',
+  passwd: '',
+  option: {
+    host: '',
+    port: 3306,
+    dialect: 'mysql',
+    dialectOptions: {
+      charset: 'utf8'
+    },
+    pool: {
+      max: 5,
+      min: 0,
+      idel: 10000
+    },
+    timezone: '+08:00'
+  }
+};
