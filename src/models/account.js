@@ -21,8 +21,8 @@ module.exports = class account {
       password: { type: Sequelize.STRING(32), allowNull: false, comment: '密码' },
       salt: { type: Sequelize.STRING(6), allowNull: false, comment: '盐值' },
       status: { type: Sequelize.BOOLEAN, allowNull: false, comment: '状态 0停用 1正常' },
-      createdTime: { type: 'TIMESTAMP', defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'), allowNull: false },
-      updatedTime: { type: 'TIMESTAMP', defaultValue: Sequelize.literal('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'), allowNull: false }
+      createdTime: { type: 'TIMESTAMP', defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'), defaultValue: null },
+      updatedTime: { type: 'TIMESTAMP', defaultValue: Sequelize.literal('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'), defaultValue: null }
     }, {
 
       tableName: 'demo_account',

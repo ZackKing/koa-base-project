@@ -12,4 +12,6 @@ const fileNameArray = fs.readdirSync(path.join(__dirname, '../src/models/'));
     const model = require(`../src/models/${fileNameArray[i]}`);
     await model.create();
   }
+  console.log('finish !');
+  process.exit(0);
 })();
