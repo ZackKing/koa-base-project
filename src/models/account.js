@@ -9,21 +9,25 @@ module.exports = class account {
     return 'demo_account';
   }
 
-  static async create() {
-    await account.model.sync();
-  }
-
-  static get model() {
-    return db.define('account', {
+  static get attributes() {
+    return {
       id: { type: Sequelize.INTEGER.UNSIGNED, autoIncrement: true, primaryKey: true },
       account: { type: Sequelize.STRING(64), allowNull: false, unique: true, comment: '账号' },
       phone: { type: Sequelize.STRING(11), allowNull: true, comment: '手机号码' },
       password: { type: Sequelize.STRING(32), allowNull: false, comment: '密码' },
       salt: { type: Sequelize.STRING(6), allowNull: false, comment: '盐值' },
       status: { type: Sequelize.BOOLEAN, allowNull: false, comment: '状态 0停用 1正常' },
-      createdTime: { type: 'TIMESTAMP', defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'), defaultValue: null },
-      updatedTime: { type: 'TIMESTAMP', defaultValue: Sequelize.literal('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'), defaultValue: null }
-    }, {
+      createdTime: { type: 'TIMESTAMP', defaultValue: Sequelize.NOW },
+      updatedTime: { type: 'TIMESTAMP', defaultValue: Sequelize.NOW }
+    };
+  }
+
+  static async create() {
+    await account.model.sync();
+  }
+
+  static get model() {
+    return db.define('account', account.attributes, {
 
       tableName: 'demo_account',
 

@@ -7,9 +7,13 @@ module.exports = class testController {
 
   static async index(ctx) {
     
-    log.info(ctx.query);
+    // log.info(ctx.query);
 
-    ctx.body = '<h1>hello koa demo!</h1>';
+    // ctx.body = '<h1>hello koa demo!</h1>';
+    
+    // await accountLogic.testInsert();
+    
+    await accountLogic.testUpdate();
   
   }
 
