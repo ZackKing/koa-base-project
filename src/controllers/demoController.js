@@ -1,9 +1,9 @@
-'use strict';
 
 const log = require('pino')();
-const accountLogic = new (require('../logic/accountLogic.js'))();
+const BaseController = require('./BaseController.js');
+const accountLogic = new (require('../logic/AccountLogic.js'))();
 
-module.exports = class testController {
+module.exports = class DemoController extends BaseController {
 
   static async index(ctx) {
     
@@ -51,8 +51,6 @@ module.exports = class testController {
     await accountLogic.testError();
 
     log.info('error after');
-
-    return ctx;
   }
 
 };

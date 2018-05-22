@@ -1,10 +1,9 @@
-'use strict';
 
 const log = require('pino')();
-const accountLogic = new (require('../logic/accountLogic.js'))();
-const userMongo = require('../models/mongodb/user.js');
+const accountLogic = new (require('../logic/AccountLogic.js'))();
+const userMongo = require('../models/mongodb/User.js');
 
-class homeController {
+module.exports = class homeController extends BaseController {
 
   static async home(ctx) {
 

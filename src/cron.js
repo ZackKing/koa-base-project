@@ -1,4 +1,3 @@
-'use strict';
 
 const log = require('pino')();
 const schedule = require('node-schedule');

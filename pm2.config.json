@@ -1,15 +1,6 @@
 {
-  "apps": [{
-      "name": "koa_web",
-      "script": "./src/web.js",
-      "watch": ["src"],
-      "env": {
-        "NODE_ENV": "development"
-      },
-      "error_file": "./logs/web-error.log",
-      "out_file": "./logs/web-out.log"
-    }, {
-      "name": "koa_api",
+  "apps": [ {
+      "name": "api",
       "script": "./src/api.js",
       "watch": ["src"],
       "env": {
@@ -18,7 +9,16 @@
       "error_file": "./logs/api-error.log",
       "out_file": "./logs/api-out.log"
     }, {
-      "name": "koa_cron",
+      "name": "web",
+      "script": "./src/web.js",
+      "watch": ["src"],
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "error_file": "./logs/web-error.log",
+      "out_file": "./logs/web-out.log"
+    }, {
+      "name": "cron",
       "script": "./src/cron.js",
       "watch": ["src"],
       "env": {

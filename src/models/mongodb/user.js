@@ -1,4 +1,3 @@
-'use strict';
 
 const mongoose = require('mongoose');
 const model = require('./mongoModel.js');

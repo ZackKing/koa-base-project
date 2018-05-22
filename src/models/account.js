@@ -1,9 +1,8 @@
-'use strict';
 
 const db = require('../services/db.js');
 const Sequelize = require('sequelize');
 
-module.exports = class account {
+module.exports = class Account {
 
   static get tableName() {
     return 'demo_account';

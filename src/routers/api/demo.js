@@ -1,18 +1,22 @@
-'use strict';
 
 const router = require('koa-router')();
 const controller = require('../../controllers/demoController.js');
 
-module.exports = router
+module.exports = {
+  prefix: '/api/demo',
 
-  .get('/', controller.index)
+  router: router
 
-  .post('/', controller.indexPost)
+    .get('/', controller.index)
 
-  .put('/:id', controller.indexPut)
+    .post('/', controller.indexPost)
 
-  .del('/:id', controller.indexDel)
-  
-  .get('/testError', controller.testError)
+    .put('/:id', controller.indexPut)
 
-  .get('/testOtherError', controller.testOtherError);
+    .del('/:id', controller.indexDel)
+    
+    .get('/testError', controller.testError)
+
+    .get('/testOtherError', controller.testOtherError)
+
+};

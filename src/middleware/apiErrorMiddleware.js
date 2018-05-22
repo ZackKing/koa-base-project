@@ -1,4 +1,4 @@
-'use strict';
+
 const log = require('pino')();
 
 module.exports = async (ctx, next) => {

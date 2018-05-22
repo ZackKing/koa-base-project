@@ -1,4 +1,3 @@
-'use strict';
 
 // production | development
 const env = [process.env.NODE_ENV || 'development'];

@@ -1,12 +1,16 @@
-'use strict';
 
 const router = require('koa-router')();
 const controller = require('../../controllers/homeController.js');
 
-module.exports = router
+module.exports = {
+  prefix: '/',
 
-  .get('/', controller.home)
+  router: router
 
-  .get('showUser', controller.showUser)
+    .get('/', controller.homeWeb)
 
-  .get('showAccount', controller.showAccount);
+    .get('showUser', controller.showUser)
+
+    .get('showAccount', controller.showAccount)
+
+};
