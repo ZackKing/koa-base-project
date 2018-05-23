@@ -1,7 +1,7 @@
 
 const log = require('pino')();
+const BaseController = require('./BaseController.js');
 const accountLogic = new (require('../logic/AccountLogic.js'))();
-const userMongo = require('../models/mongodb/User.js');
 
 module.exports = class homeController extends BaseController {
 
@@ -17,7 +17,7 @@ module.exports = class homeController extends BaseController {
 
   }
 
-  static async showAccount(ctx) {
+  static async list(ctx) {
 
     const list = await accountLogic.getAllAccount();
 
@@ -28,11 +28,8 @@ module.exports = class homeController extends BaseController {
 
   }
 
-  static async showUser(ctx) {
-    const user = await userMongo.model.findOne({ name: 'zack' });
-    ctx.body = JSON.stringify(user);
+  static async info(ctx) {
+    ctx.body = JSON.stringify({ name: 'zack' });
   }
 
-}
-
-module.exports = homeController;
+};

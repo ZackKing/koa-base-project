@@ -7,8 +7,8 @@ module.exports = async (ctx, next) => {
 
   if (whiteList.indexOf(ctx.path) === -1) {
     if (!ctx.session.auth) {
-      log.info('未登录');
-      return await ctx.redirect('/login');
+      // log.info('未登录');
+      // return await ctx.redirect('/login');
     }
   }
 

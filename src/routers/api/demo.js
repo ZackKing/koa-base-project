@@ -1,9 +1,9 @@
 
 const router = require('koa-router')();
-const controller = require('../../controllers/demoController.js');
+const controller = require('../../controllers/DemoController.js');
 
 module.exports = {
-  prefix: '/api/demo',
+  prefix: '/demo',
 
   router: router
 

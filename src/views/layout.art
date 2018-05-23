@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{{block 'title'}}koa base project demo{{/block}}</title>
+</head>
+
+<body>
+  {{block 'content'}}
+  <div class="content-wrapper">
+  页面错误 ! 请稍候刷新
+  </div>
+  {{/block}}
+</body>

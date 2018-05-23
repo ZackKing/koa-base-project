@@ -4,19 +4,18 @@
   "description": "a base code of koa project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "pm2 restart pm2.config.json && pm2 logs --raw |./node_modules/pino/bin.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "ejs": "^2.5.6",
+    "art-template": "^4.12.2",
     "ioredis": "^3.1.2",
     "koa": "^2.3.0",
+    "koa-art-template": "^1.1.1",
     "koa-body": "^2.3.0",
     "koa-router": "^7.2.1",
     "koa-session": "^5.4.0",
-    "koa-static": "^4.0.1",
-    "koa-views": "^6.0.2",
     "mongoose": "^4.11.7",
     "mysql2": "^1.3.6",
     "node-schedule": "^1.2.4",

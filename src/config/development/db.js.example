@@ -1,4 +1,3 @@
-'use strict';
 
 module.exports = {
   database: '',
@@ -9,10 +8,10 @@ module.exports = {
     port: 3306,
     dialect: 'mysql',
     dialectOptions: {
-      charset: 'utf8'
+      charset: 'utf8mb4'
     },
     pool: {
-      max: 5,
+      max: 2,
       min: 0,
       idel: 10000
     },

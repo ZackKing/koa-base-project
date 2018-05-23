@@ -1,16 +1,16 @@
 
 const router = require('koa-router')();
-const controller = require('../../controllers/homeController.js');
+const controller = require('../../controllers/HomeController.js');
 
 module.exports = {
   prefix: '/',
 
   router: router
 
-    .get('/', controller.homeWeb)
+    .get('/', controller.home)
 
-    .get('showUser', controller.showUser)
+    .get('list', controller.list)
 
-    .get('showAccount', controller.showAccount)
+    .get('/:id', controller.info)
 
 };

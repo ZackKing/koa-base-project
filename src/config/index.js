@@ -4,10 +4,17 @@ const env = [process.env.NODE_ENV || 'development'];
 
 console.log('use', env, 'config file');
 
-module.exports = {
-  koaConfig: require(`./${env}/koa.js`),
-  dbConfig: require(`./${env}/db.js`),
-  redisConfig: require(`./${env}/redis.js`),
-  mongodbConfig: require(`./${env}/mongodb.js`),
-  sessionConfig: require(`./${env}/session.js`)
-};
+const fs = require('fs');
+const path = require('path');
+
+const fileNameArray = fs.readdirSync(path.join(__dirname, `./${env}`));
+
+let config = {};
+
+for (let i = 0; i < fileNameArray.length; i++) {
+  if (fileNameArray[i].indexOf('.js') === -1 || fileNameArray[i] === 'index.js' ) 
+    continue;
+  config[`${fileNameArray[i].replace('.js', '')}Config`] = require(`./${env}/${fileNameArray[i]}`);
+}
+
+module.exports = config;

@@ -1,0 +1,12 @@
+
+{{extend './layout.art'}}
+
+{{block 'title'}} {{title}} {{/block}}
+
+{{block 'content'}}
+	
+	<p>Code: {{code}}</p>
+    <p>Error: {{error}}</p>
+    <p>Message: {{message}}</p>
+
+{{/block}}

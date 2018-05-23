@@ -1,0 +1,9 @@
+{{extend '../layout.art'}}
+
+{{block 'title'}}{{title}}{{/block}}
+
+{{block 'content'}}
+	
+	hello koa !
+
+{{/block}}

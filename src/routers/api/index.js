@@ -10,7 +10,7 @@ for (let i = 0; i < fileNameArray.length; i++) {
       continue;
 
     const routers = require(`./${fileNameArray[i]}`);
-    router.use(routers.prefix , routers.router.routes(), routers.router.allowedMethods());
+    router.use('/api' + routers.prefix , routers.router.routes(), routers.router.allowedMethods());
 }
 
 module.exports = router;
