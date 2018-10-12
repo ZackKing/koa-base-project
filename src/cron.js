@@ -1,7 +1,7 @@
 
 const log = require('pino')();
 const schedule = require('node-schedule');
-const dateUtil = require('./utils/dateUtil.js');
+const time = require('./utils/time');
 
 let count = 0;
 
@@ -11,7 +11,7 @@ let count = 0;
 
 schedule.scheduleJob('05 01 * * *', async () => {
 
-  log.info('Schedule Start At ' + dateUtil.timeStamp());
+  log.info('Schedule Start At ' + time.timeStamp());
 
   try {
     
@@ -23,8 +23,8 @@ schedule.scheduleJob('05 01 * * *', async () => {
 
   }
 
-  log.info('Schedule end At ' + dateUtil.timeStamp());
+  log.info('Schedule end At ' + time.timeStamp());
 
 });
 
-log.info('Schedule Server Init At ' + dateUtil.timeStamp());
+log.info('Schedule Server Init At ' + time.timeStamp());

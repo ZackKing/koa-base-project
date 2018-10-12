@@ -1,4 +1,3 @@
-'use strict';
 
 const fs = require('fs');
 const path = require('path');
@@ -7,10 +6,11 @@ const fileNameArray = fs.readdirSync(path.join(__dirname, '../src/models/'));
 
 (async () => {
   for (let i = 0; i < fileNameArray.length; i++) {
-    if (fileNameArray[i].indexOf('.js') === -1 ) continue;
+    if (fileNameArray[i].indexOf('.js') === -1 || fileNameArray[i] === 'Model.js' ) continue;
 
-    const model = require(`../src/models/${fileNameArray[i]}`);
-    await model.create();
+    const M = require(`../src/models/${fileNameArray[i]}`);
+    const m = new M();
+    await m.init();
   }
   console.log('finish !');
   process.exit(0);

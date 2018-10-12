@@ -1,6 +1,5 @@
-'use strict';
 
 const redis = require('ioredis');
-const { redisConfig } = require('../config');
+const config = require('../config');
 
-module.exports = new redis(redisConfig);
+module.exports = new redis(config.redis);

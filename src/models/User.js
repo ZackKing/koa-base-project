@@ -1,41 +1,53 @@
 
-const db = require('../services/db.js');
 const Sequelize = require('sequelize');
+const Model = require('./Model.js');
 
-module.exports = class Account {
+module.exports = class User extends Model {
 
-  static get tableName() {
-    return 'demo_account';
+  get name() {
+    return 'user';
   }
 
-  static get attributes() {
+  get attr() {
     return {
       id: { type: Sequelize.INTEGER.UNSIGNED, autoIncrement: true, primaryKey: true },
-      account: { type: Sequelize.STRING(64), allowNull: false, unique: true, comment: '账号' },
-      phone: { type: Sequelize.STRING(11), allowNull: true, comment: '手机号码' },
-      password: { type: Sequelize.STRING(32), allowNull: false, comment: '密码' },
-      salt: { type: Sequelize.STRING(6), allowNull: false, comment: '盐值' },
-      status: { type: Sequelize.BOOLEAN, allowNull: false, comment: '状态 0停用 1正常' },
+      account: { type: Sequelize.STRING(64), allowNull: false, unique: true },
+      phone: { type: Sequelize.STRING(11), allowNull: true },
+      password: { type: Sequelize.STRING(32), allowNull: false },
+      salt: { type: Sequelize.STRING(6), allowNull: false },
+      status: { type: Sequelize.BOOLEAN, allowNull: false },
       createdTime: { type: 'TIMESTAMP', defaultValue: Sequelize.NOW },
       updatedTime: { type: 'TIMESTAMP', defaultValue: Sequelize.NOW }
     };
   }
 
-  static async create() {
-    await account.model.sync();
+  get map() {
+    return {
+      type: {
+        teacher: { code: 1, text: 'teacher' },
+        client: { code: 2, text: 'client' }
+      },
+      _type: {
+        1: 'teacher',
+        2: 'client'
+      },
+      status: {
+        active: { code: 1, text: 'active' },
+        inactive: { code: 0, text: 'inactive' }
+      },
+      _status: {
+        0: 'inactive',
+        1: 'active'
+      }
+    };
   }
 
-  static get model() {
-    return db.define('account', account.attributes, {
-
-      tableName: 'demo_account',
-
+  get option() {
+    return {
+      tableName: this.tableName,
       engine: 'InnoDB',
-
       charset: 'utf8mb4',
-
-      comment: '账户表',
-
+      comment: 'user table',
       // don't forget to enable timestamps! if you want to use paranoid
       timestamps: false,
 
@@ -66,8 +78,19 @@ module.exports = class Account {
       // to the model and throw an OptimisticLockingError error when stale instances are saved.
       // Set to true or a string with the attribute name you want to use to enable.
       // version: true
+    };
+  }
 
-    });
+  get initData() {
+    return [
+      { 
+        account: 'admin',
+        phone: '13888888888',
+        password: 'c7935cc8ee50b752345290d8cf136827',
+        salt: 'abcdef',
+        status: 1
+      }
+    ];
   }
 
 

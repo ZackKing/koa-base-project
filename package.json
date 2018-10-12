@@ -1,24 +1,23 @@
 {
   "name": "koa-base-project",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "a base code of koa project",
   "main": "index.js",
   "scripts": {
-    "dev": "pm2 restart pm2.config.json && pm2 logs --raw |./node_modules/pino/bin.js"
+    "start": "pm2 restart pm2.config.json && pm2 logs --raw |./node_modules/pino/bin.js",
+    "apidoc": "./node_modules/.bin/apidoc -i ./src/controllers/ -o ./public/apidoc/"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "zack",
+  "license": "MIT",
   "dependencies": {
-    "art-template": "^4.12.2",
+    "apidoc": "^0.17.6",
+    "axios": "^0.18.0",
     "ioredis": "^3.1.2",
+    "jsonwebtoken": "^8.3.0",
     "koa": "^2.3.0",
-    "koa-art-template": "^1.1.1",
     "koa-body": "^2.3.0",
     "koa-router": "^7.2.1",
-    "koa-session": "^5.4.0",
-    "mongoose": "^4.11.7",
     "mysql2": "^1.3.6",
-    "node-schedule": "^1.2.4",
     "pino": "^4.7.1",
     "sequelize": "^4.4.0"
   }

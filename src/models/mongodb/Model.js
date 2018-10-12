@@ -1,7 +1,7 @@
 
 const connection = require('../../services/mongodb.js');
 
-module.exports = class mongoModel {
+module.exports = class Model {
 
   get model() {
     if(!connection.models[this.collectionName]) 

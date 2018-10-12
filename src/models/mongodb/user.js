@@ -1,8 +1,8 @@
 
 const mongoose = require('mongoose');
-const model = require('./mongoModel.js');
+const Model = require('./Model');
 
-class user extends model { 
+module.exports =  class User extends Model { 
 
   get collectionName() {
     return 'user';
@@ -16,6 +16,4 @@ class user extends model {
     });
   }
 
-}
-
-module.exports = new user();
+};

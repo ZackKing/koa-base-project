@@ -1,8 +1,7 @@
-'use strict';
 
 const moment = require('moment');
 
-module.exports = class dateUtil {
+module.exports = class time {
   static timeStamp(format) {
     if (format) return moment().utc().add(8, 'h').format(format);else return moment().utc().add(8, 'h').format('YYYY-MM-DD HH:mm:ss');
   }

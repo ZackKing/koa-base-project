@@ -6,26 +6,8 @@
       "env": {
         "NODE_ENV": "development"
       },
-      "error_file": "./logs/api-error.log",
-      "out_file": "./logs/api-out.log"
-    }, {
-      "name": "web",
-      "script": "./src/web.js",
-      "watch": ["src"],
-      "env": {
-        "NODE_ENV": "development"
-      },
-      "error_file": "./logs/web-error.log",
-      "out_file": "./logs/web-out.log"
-    }, {
-      "name": "cron",
-      "script": "./src/cron.js",
-      "watch": ["src"],
-      "env": {
-        "NODE_ENV": "development"
-      },
-      "error_file": "./logs/cron-error.log",
-      "out_file": "./logs/cron-out.log"
+      "error_file": "./logs/error.log",
+      "out_file": "./logs/out.log"
     }
   ]
 }

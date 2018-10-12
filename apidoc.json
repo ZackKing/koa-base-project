@@ -1,0 +1,8 @@
+{
+  "name": "koa api doc",
+  "version": "1.0.0",
+  "description": "koa api doc",
+  "title": "koa api doc",
+  "url" : "http://127.0.0.1:3000",
+  "sampleUrl": "http://127.0.0.1:3000"
+}
